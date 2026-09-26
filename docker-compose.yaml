@@ -1,0 +1,31 @@
+name: collection-test
+
+services:
+  proxy:
+    container_name: nginx
+    build: /home/baconway/Documents/nginxtest/
+    ports:
+      - 80:80
+    volumes:
+      - /home/baconway/Pictures/assets:/assets
+
+  db:
+    container_name: collection_db
+    image: postgres:18-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - /home/baconway/Documents/postgres:/var/lib/postgresql
+
+  frontend:
+    profiles: ["debug", "testing"]
+    container_name: collection-frontend
+    build: /home/baconway/Documents/collection-viewer-full/
+    ports:
+      - 4173:4173
+    environment:
+      - HOST=localhost
+      - DB_USER=bway
+      - PORT=5432
+      - DB=bwayTest
+      - PASSWORD=1234

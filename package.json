@@ -1,0 +1,17 @@
+{
+  "name": "a000-parser",
+  "version": "1.0.0",
+  "description": "parser for A000 opts",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node consoleUi.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "fast-xml-parser": "^5.11.0",
+    "node": "^26.7.0",
+    "pg": "^8.23.0"
+  }
+}
