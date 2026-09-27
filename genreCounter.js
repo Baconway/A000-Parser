@@ -22,25 +22,25 @@ const FoldersToSearch = [
     folderName: "frame",
     xmlName: "Frame.xml",
     xmlStartingPoint: "FrameData",
-    localImgPath: "/home/baconway/Pictures/assets/frame/",
+    localImgPath: "/root/site/sdga/frame/",
   },
   {
     folderName: "plate",
     xmlName: "Plate.xml",
     xmlStartingPoint: "PlateData",
-    localImgPath: "/home/baconway/Pictures/assets/plate/",
+    localImgPath: "/root/site/sdga/plate/",
   },
   {
     folderName: "icon",
     xmlName: "Icon.xml",
     xmlStartingPoint: "IconData",
-    localImgPath: "/home/baconway/Pictures/assets/icon/",
+    localImgPath: "/root/site/sdga/icon/",
   },
   {
     folderName: "chara",
     xmlName: "Chara.xml",
     xmlStartingPoint: "CharaData",
-    localImgPath: "/home/baconway/Pictures/assets/chara/",
+    localImgPath: "/root/site/sdga/chara/",
   },
 ];
 
