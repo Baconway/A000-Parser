@@ -10,25 +10,25 @@ const FoldersToSearch = [
     folderName: "frame",
     xmlName: "Frame.xml",
     xmlStartingPoint: "FrameData",
-    localImgPath: "/home/baconway/Pictures/assets/frame/",
+    localImgPath: "/root/site/sdga/frame",
   },
   {
     folderName: "plate",
     xmlName: "Plate.xml",
     xmlStartingPoint: "PlateData",
-    localImgPath: "/home/baconway/Pictures/assets/nameplate/",
+    localImgPath: "/root/site/sdga/nameplate/",
   },
   {
     folderName: "icon",
     xmlName: "Icon.xml",
     xmlStartingPoint: "IconData",
-    localImgPath: "/home/baconway/Pictures/assets/icon/",
+    localImgPath: "/root/site/sdga/icon/",
   },
   {
     folderName: "chara",
     xmlName: "Chara.xml",
     xmlStartingPoint: "CharaData",
-    localImgPath: "/home/baconway/Pictures/assets/chara/",
+    localImgPath: "/root/site/sdga/chara/",
   },
 ];
 
@@ -176,36 +176,6 @@ async function extractFromTitleXML(xml_str, asset_versions, title_types) {
 const main = async () => {
   let { asset_versions, asset_types } = await loadAssetTables();
   let title_types = await loadTitleRarityTable();
-
-  /*for (let i = 0; i < FoldersToSearch.length; i++) {
-    const folder = FoldersToSearch[i].folderName;
-    const opt_path = process.env.OPT_PATH;
-
-    const FolderPath = opt_path + folder;
-    const FolderContents = fs.readdirSync(FolderPath);
-
-    for (let k = 0; k < FolderContents.length; k++) {
-      const FolderChild = FolderContents[k];
-
-      if (FolderChild.includes("Sort.xml")) continue;
-      const XML_file = FoldersToSearch[i].xmlName;
-      const XML_Path = FolderPath + "/" + FolderChild + "/" + XML_file;
-
-      const XML_Details = fs.readFileSync(XML_Path);
-
-      const stratingPoint = FoldersToSearch[i].xmlStartingPoint;
-      const localImgPath = FoldersToSearch[i].localImgPath;
-
-      await extractFromXML(
-        XML_Details.toString("utf-8"),
-        stratingPoint,
-        folder,
-        asset_versions,
-        asset_types,
-        localImgPath,
-      );
-    }
-  }*/
 
   const title_path = process.env.OPT_PATH + "title";
   const title_Contents = fs.readdirSync(title_path);

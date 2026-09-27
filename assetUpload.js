@@ -34,11 +34,11 @@ const FoldersToSearch = [
 ];
 
 const UploadPool = new Pool({
-  host: "localhost",
-  user: "bway",
-  port: 5432,
-  database: "bwayTest",
-  password: "1234",
+  host: process.env.HOST,
+  user: process.env.DB_USER,
+  port: Number(process.env.PORT),
+  database: process.env.DB,
+  password: process.env.PASSWORD,
   onConnect: () => {
     console.log("Script has connected to Database");
   },
