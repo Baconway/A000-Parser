@@ -1,0 +1,15 @@
+INSERT INTO asset_versions (version_id, display_name) VALUES 
+('1.00', 'maimai でらっくす'),
+('1.05', 'maimai でらっくす PLUS'),
+('1.10', 'maimai でらっくす Splash'),
+('1.15', 'maimai でらっくす Splash PLUS'),
+('1.20', 'maimai でらっくす UNiVERSE'),
+('1.25', 'maimai でらっくす UNiVERSE PLUS'),
+('1.30', 'maimai でらっくす FESTiVAL'),
+('1.35', 'maimai でらっくす FESTiVAL PLUS'),
+('1.40', 'maimai でらっくす BUDDiES'),
+('1.45', 'maimai でらっくす BUDDiES PLUS'),
+('1.50', 'maimai でらっくす PRiSM'),
+('1.55', 'maimai でらっくす PRiSM PLUS'),
+('1.60', 'maimai でらっくす CiRCLE'),
+('1.65', 'maimai でらっくす CiRCLE PLUS');

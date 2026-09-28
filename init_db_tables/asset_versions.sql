@@ -1,0 +1,5 @@
+CREATE TABLE asset_versions(
+  id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY , 
+  version_id VARCHAR(20) NOT NULL,
+  display_name VARCHAR(55) NOT NULL
+);

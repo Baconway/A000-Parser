@@ -1,8 +1,12 @@
 import readline from "node:readline/promises";
+
 import { readdirSync } from "node:fs";
 import { Worker } from "node:worker_threads";
+import { Pool } from "pg";
 
-const path_reader = readline.createInterface({
+import { create_init_tables } from "./scaffold_db";
+
+const userInput = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
@@ -17,13 +21,21 @@ const init_app = async () => {
 
   while (!bundle_path) {
     try {
-      bundle_path = await path_reader.question("A000 Path: ");
+      bundle_path = await userInput.question("A000 Path: ");
       const checkValidity = readdirSync(bundle_path);
     } catch (error) {
       console.log("Input was not a path");
       bundle_path = undefined;
     }
   }
+
+  // if user wants to create the database from scratch
+
+  initTables = await userInput.question("Init DB tables?: (Y/null)");
+
+  if (initTables === "Y") {
+    create_init_tables();
+  } else console.log("Skipping table init!");
 
   console.log("Path was valid, upload starting!");
 
@@ -45,7 +57,7 @@ const init_app = async () => {
     console.log(`Type ${scriptType} being uploaded`);
   }
 
-  path_reader.close();
+  userInput.close();
 };
 
 init_app();

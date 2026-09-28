@@ -92,11 +92,12 @@ async function extractFromXML(
       : 0;
     const asset_name = contents.name.str;
     const asset_game_id = String(contents.name.id).padStart(6, "0");
+    const asset_genre = contents.genre.str;
 
     const obtain_method = contents.normText;
 
     const upRequest = await UploadPool.query(
-      "INSERT INTO asset_list (asset_game_id, asset_name, obtain_method, version_added, asset_type, asset_local_path) VALUES ($1, $2, $3, $4, $5, $6)",
+      "INSERT INTO asset_list (asset_game_id, asset_name, obtain_method, version_added, asset_type, asset_local_path, genre) VALUES ($1, $2, $3, $4, $5, $6, $7)",
       [
         asset_game_id,
         asset_name,
@@ -104,6 +105,7 @@ async function extractFromXML(
         asset_versions.get(version),
         asset_types.get(asset_type),
         findLocalImageAsset(asset_game_id, localImgPath),
+        asset_genre,
       ],
     );
 

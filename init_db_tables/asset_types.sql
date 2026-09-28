@@ -1,0 +1,5 @@
+CREATE TABLE asset_types(
+    id SMALLINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    internal_name VARCHAR(50) NOT NULL,
+    display_name VARCHAR(50) NOT NULL
+);
